@@ -1,4 +1,4 @@
-# COMP6591-Intro-to-KBS-Assignments
+# COMP6591-Introduction to Knowledge Base Systems - Assignments
 Submitted Assignments for the COMP-6591 course at Concordia University (Summer 2022).
 
 ## Team Members
