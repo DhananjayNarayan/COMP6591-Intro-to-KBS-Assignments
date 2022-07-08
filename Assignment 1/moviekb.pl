@@ -20,68 +20,189 @@ movie('tt5959980','Vada Chennai',[crime,action,thriller],2018,8.4,[crime,muder,t
 movie('tt9900782','Kaithi',[crime,thriller],2019,8.5,[smuggling,drugs,war,biryani,multiverse,police,chase],[tamil],'').
 movie('tt3863552','Bajrangi Bhaijaan',[adventure,comedy,drama],2015,8.1,[chicken,pakistan,india,kid,child,reunion],[hindi],'').
 
-director('nm0220600','Scott Derrickson' ,male ,56).
-director('nm12268742','Cibi Chakravarthy' ,male ,33).
-director('nm3481620','Shashi Kiran Tikka' ,male ,38).
-director('nm1442514','Rajamouli' ,male ,49).
-director('nm1203138','Kabir Khan' ,male ,53).
-director('nm2379696','Radhakrishna Kumar' ,male ,33).
-director('nm2575525','Pushkar' ,male ,42).
-director('nm2566836','Gayatri' ,female,37).
-director('nm3363032','Ryan Coogler' ,male ,38).
-director('nm10829550','Venkat Ramji' ,male ,56).
-director('nm5961051','Atlee Kumar' ,male ,39).
-director('nm12135964','Nelson Dilipkumar' ,male,38).
-director('nm6682160','Sujeeth' ,male ,37).
-director('nm0534856','Madhavan' ,male ,52).
-director('nm0440269','Karunakaran' ,male ,48).
-director('nm7992231','Lokesh Kanagaraj' ,male ,36).
-director('nm4274575','Vetrimaaran' ,male ,47).
+director('nm0220600','Scott Derrickson',male ,56).
+director('nm12268742','Cibi Chakravarthy',male ,33).
+director('nm3481620','Shashi Kiran Tikka',male ,38).
+director('nm1442514','Rajamouli',male ,49).
+director('nm1203138','Kabir Khan',male ,53).
+director('nm2379696','Radhakrishna Kumar',male ,33).
+director('nm2575525','Pushkar',male ,42).
+director('nm2566836','Gayatri',female,37).
+director('nm3363032','Ryan Coogler',male ,38).
+director('nm10829550','Venkat Ramji',male ,56).
+director('nm5961051','Atlee Kumar',male ,39).
+director('nm12135964','Nelson Dilipkumar',male,38).
+director('nm6682160','Sujeeth',male ,37).
+director('nm0534856','Madhavan',male ,52).
+director('nm0440269','Karunakaran',male ,48).
+director('nm7992231','Lokesh Kanagaraj',male ,36).
+director('nm4274575','Vetrimaaran',male ,47).
 
-actor('nm1659141' ,'Prabhas' ,male ,43).
-actor('nm5249562' ,'Pooja Hegde' ,female,32).
-actor('nm1912683' ,'Karthi' ,male ,45).
-actor('nm0000160' ,'Ethan Hawke' ,male ,52).
-actor('nm3414188' ,'Adivi Sesh' ,male ,37).
-actor('nm2281292' ,'Rana Daggubati' ,male ,38).
-actor('nm2011932' ,'Anushka Shetty' ,female,41).
-actor('nm1694524' ,'NTR' ,male ,38).
-actor('nm2776304' ,'Ram Charan' ,male ,37).
-actor('nm0006795' ,'Salman Khan' ,male ,57).
-actor('nm0534856' ,'Madhavan' ,male ,52).
-actor('nm0004626' ,'Kareena Kapoor' ,female,42).
-actor('nm0897201' ,'Joseph Vijay' ,male ,52).
-actor('nm3606487' ,'Samantha Ruth Prabhu' ,female,35).
-actor('nm3367112' ,'Amy Jackson' ,female,30).
-actor('nm6489058' ,'Yogi Babu' ,male ,45).
-actor('nm3601766' ,'Shraddha Kapoor' ,female,36).
-actor('nm1302330' ,'Murli Sharma' ,male ,53).
-actor('nm1017633' ,'Alia Bhatt' ,female,32).
-actor('nm2570245' ,'Kajal Aggarwal' ,female,37).
-actor('nm0436302' ,'Pawan Kalyan' ,male ,52).
-actor('nm9296746' ,'Mason Thames' ,male ,15).
-actor('nm6421259' ,'Madeleine McGraw' ,female,14).
-actor('nm10484501' ,'Priyanka Arulmohan' ,female,27). 
-actor('nm2284321' ,'Samuthirakani' ,male ,52).
-actor('nm4792434' ,'Sivakarthikeyan' ,male ,36).
-actor('nm0695177' ,'Prakash Raj' ,male ,59).
-actor('nm1569276' ,'Chadwick Boseman' ,male ,43).
-actor('nm1775091' ,'Danai Gurira' ,female,35).
-actor('nm0293509' ,'Martin Freeman' ,male ,51).
-actor('nm5294556' ,'Regina Cassandra' ,female,32).
-actor('nm0694893' ,'Prabhu' ,male ,65).
-actor('nm1628115' ,'Juliet Rylance' ,female,32).
-actor('nm0710447' ,'James Ransone' ,male ,36).
-actor('nm4043111' ,'Vijay Sethupathi' ,male ,50).
-actor('nm7744845' ,'Shraddha Srinath' ,female,30).
-actor('nm0451321' ,'Shah Rukh Khan' ,male ,58).
-actor('nm0801264' ,'Simran' ,female,45).
-actor('nm0103977' ,'Brahmanandam' ,male ,68).
-actor('nm1333687' ,'Dhanush' ,male ,49).
-actor('nm5781594' ,'Aishwarya Rajesh' ,female,30).
-actor('nm10183124' ,'Arjun Das' ,male ,28).
-actor('nm1230844' ,'Narain' ,male ,42).
-actor('nm7372970' ,'Harshaali Malhotra' ,female,14).
+actor('nm1659141','Prabhas',male ,43).
+actor('nm5249562','Pooja Hegde',female,32).
+actor('nm1912683','Karthi',male ,45).
+actor('nm0000160','Ethan Hawke',male ,52).
+actor('nm3414188','Adivi Sesh',male ,37).
+actor('nm2281292','Rana Daggubati',male ,38).
+actor('nm2011932','Anushka Shetty',female,41).
+actor('nm1694524','NTR',male ,38).
+actor('nm2776304','Ram Charan',male ,37).
+actor('nm0006795','Salman Khan',male ,57).
+actor('nm0534856','Madhavan',male ,52).
+actor('nm0004626','Kareena Kapoor',female,42).
+actor('nm0897201','Joseph Vijay',male ,52).
+actor('nm3606487','Samantha Ruth Prabhu',female,35).
+actor('nm3367112','Amy Jackson',female,30).
+actor('nm6489058','Yogi Babu',male ,45).
+actor('nm3601766','Shraddha Kapoor',female,36).
+actor('nm1302330','Murli Sharma',male ,53).
+actor('nm1017633','Alia Bhatt',female,32).
+actor('nm2570245','Kajal Aggarwal',female,37).
+actor('nm0436302','Pawan Kalyan',male ,52).
+actor('nm9296746','Mason Thames',male ,15).
+actor('nm6421259','Madeleine McGraw',female,14).
+actor('nm10484501','Priyanka Arulmohan',female,27). 
+actor('nm2284321','Samuthirakani',male ,52).
+actor('nm4792434','Sivakarthikeyan',male ,36).
+actor('nm0695177','Prakash Raj',male ,59).
+actor('nm1569276','Chadwick Boseman',male ,43).
+actor('nm1775091','Danai Gurira',female,35).
+actor('nm0293509','Martin Freeman',male ,51).
+actor('nm5294556','Regina Cassandra',female,32).
+actor('nm0694893','Prabhu',male ,65).
+actor('nm1628115','Juliet Rylance',female,32).
+actor('nm0710447','James Ransone',male ,36).
+actor('nm4043111','Vijay Sethupathi',male ,50).
+actor('nm7744845','Shraddha Srinath',female,30).
+actor('nm0451321','Shah Rukh Khan',male ,58).
+actor('nm0801264','Simran',female,45).
+actor('nm0103977','Brahmanandam',male ,68).
+actor('nm1333687','Dhanush',male ,49).
+actor('nm5781594','Aishwarya Rajesh',female,30).
+actor('nm10183124','Arjun Das',male ,28).
+actor('nm1230844','Narain',male ,42).
+actor('nm7372970','Harshaali Malhotra',female,14).
 
+movie_director('tt7144666','nm0220600').
+movie_director('tt10709484','nm12268742').
+movie_director('tt9851854','nm3481620').
+movie_director('tt8960382','nm2379696').
+movie_director('tt2631186','nm1442514').
+movie_director('tt5440700','nm5961051').
+movie_director('tt1825683','nm3363032').
+movie_director('tt10545484','nm10829550').
+movie_director('tt11301946','nm12135964').
+movie_director('tt1649303','nm0440269').
+movie_director('tt1922777','nm0220600').
+movie_director('tt6148156','nm2575525').
+movie_director('tt6148156','nm2566836').
+movie_director('tt8178634','nm1442514').
+movie_director('tt6836936','nm6682160').
+movie_director('tt9263550','nm0534856').
+movie_director('tt11374902','nm12135964').
+movie_director('tt5959980','nm4274575').
+movie_director('tt9900782','nm7992231').
+movie_director('tt3863552','nm1203138').
+
+
+%TheBlackPhone
+movie_actor('tt7144666','nm0000160').
+movie_actor('tt7144666','nm9296746').
+movie_actor('tt7144666','nm6421259').
+
+%Don
+movie_actor('tt10709484','nm4792434').
+movie_actor('tt10709484','nm10484501').
+movie_actor('tt10709484','nm2284321').
+
+%Major
+movie_actor('tt9851854','nm3414188').
+movie_actor('tt9851854','nm0695177').
+movie_actor('tt9851854','nm1302330').
+ 
+%Radhe Shyam
+movie_actor('tt8960382','nm1659141').
+movie_actor('tt8960382','nm5249562').
+movie_actor('tt8960382','nm1302330').
+
+%Baahubali
+movie_actor('tt2631186','nm1659141').
+movie_actor('tt2631186','nm2281292').
+movie_actor('tt2631186','nm2011932').
+
+%Theri
+movie_actor('tt5440700','nm0897201').
+movie_actor('tt5440700','nm3606487').
+movie_actor('tt5440700','nm3367112').
+
+%BlackPanther
+movie_actor('tt1825683','nm1569276').
+movie_actor('tt1825683','nm1775091').
+movie_actor('tt1825683','nm0293509').
+ 
+%Evaru
+movie_actor('tt10545484','nm3414188').
+movie_actor('tt10545484','nm1302330').
+movie_actor('tt10545484','nm5294556').
+
+%Beast
+movie_actor('tt11301946','nm0897201').
+movie_actor('tt11301946','nm5249562').
+movie_actor('tt11301946','nm6489058').
+
+%Darling
+movie_actor('tt1649303','nm1659141').
+movie_actor('tt1649303','nm2570245').
+movie_actor('tt1649303','nm0694893').
+
+%Sinister
+movie_actor('tt1922777','nm0000160').
+movie_actor('tt1922777','nm1628115').
+movie_actor('tt1922777','nm0710447').
+
+%VikramVedha
+movie_actor('tt6148156','nm0534856').
+movie_actor('tt6148156','nm4043111').
+movie_actor('tt6148156','nm7744845').
+
+%Rocketry
+movie_actor('tt9263550','nm0534856').
+movie_actor('tt9263550','nm0801264').
+movie_actor('tt9263550','nm0451321').
+
+%RRR
+movie_actor('tt8178634','nm1694524').
+movie_actor('tt8178634','nm2776304').
+movie_actor('tt8178634','nm1017633').
+
+%Saaho
+movie_actor('tt6836936','nm1659141').
+movie_actor('tt6836936','nm3601766').
+movie_actor('tt6836936','nm1302330').
+
+%Doctor
+movie_actor('tt11374902','nm4792434').
+movie_actor('tt11374902','nm10484501').
+movie_actor('tt11374902','nm6489058').
+
+%Jalsa
+movie_actor('tt1191121','nm0436302').
+movie_actor('tt1191121','nm0695177').
+movie_actor('tt1191121','nm0103977').
+
+%VadaChennai
+movie_actor('tt5959980','nm1333687').
+movie_actor('tt5959980','nm5781594').
+movie_actor('tt5959980','nm2284321').
+
+%Kaithi
+movie_actor('tt9900782','nm1912683').
+movie_actor('tt9900782','nm10183124').
+movie_actor('tt9900782','nm1230844').
+
+%BajrangiBhaijaan
+movie_actor('tt3863552','nm0006795').
+movie_actor('tt3863552','nm0004626').
+movie_actor('tt3863552','nm7372970').
 
 
