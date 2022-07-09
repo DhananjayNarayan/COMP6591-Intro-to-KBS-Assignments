@@ -20,8 +20,6 @@ movie('tt5959980','Vada Chennai',[crime,action,thriller],2018,8.4,[crime,muder,t
 movie('tt9900782','Kaithi',[crime,thriller],2019,8.5,[smuggling,drugs,war,biryani,multiverse,police,chase],[tamil],'').
 movie('tt3863552','Bajrangi Bhaijaan',[adventure,comedy,drama],2015,8.1,[chicken,pakistan,india,kid,child,reunion],[hindi],'').
 
-%my_movie([My,Story],dj).
-
 director('nm0220600','Scott Derrickson',male ,56).
 director('nm12268742','Cibi Chakravarthy',male ,33).
 director('nm3481620','Shashi Kiran Tikka',male ,38).
@@ -211,3 +209,22 @@ movie_actor('tt3863552','nm7372970').
 list_movies_played_by_actor(X):- findall(Z,(actor(I,X,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L3), 
                  write(L3).
 
+                                 
+
+distinct_movies_by_two_actors(A,B,S):- findall(Z,(actor(I,A,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L3).
+
+
+distinct_movies(A,B,Set):- findall(Z,(actor(I,A,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L1),
+                         
+                         findall(Z,(actor(I,B,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L2),
+                         
+                         append(L1,L2,L3),
+                         
+                         sort(L3,LL),
+                         write(LL).
+
+
+
+sort_by_id(ID,T):- findall([ID,T],movie(ID,T,_,_,_,_,_,_),Lst),
+                   sort(Lst,LLL),
+                    write(LLL).
