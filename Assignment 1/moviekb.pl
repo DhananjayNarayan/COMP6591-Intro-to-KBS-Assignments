@@ -205,16 +205,20 @@ movie_actor('tt3863552','nm0006795').
 movie_actor('tt3863552','nm0004626').
 movie_actor('tt3863552','nm7372970').
 
-
+%Rule3
 list_movies_played_by_actor(X):- findall(Z,(actor(I,X,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L3), 
                  write(L3).
 
-                                 
 
-distinct_movies_by_two_actors(A,B,S):- findall(Z,(actor(I,A,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L3).
+%Rule4
+distinct_movies_by_actors(A,B):- findall(F, (actor(I1,A,_,_),actor(I2,B,_,_),movie_actor(M,I1),movie_actor(M,I2),movie(M,F,_,_,_,_,_,_)), LT ),
+                                     length(LT,N),
+                                     write('Movies in Common' = N),
+                                     write(LT).
+                                     
 
-
-distinct_movies(A,B,Set):- findall(Z,(actor(I,A,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L1),
+%Rule5                                 
+distinct_movies_by_either_two_actors(A,B):- findall(Z,(actor(I,A,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L1),
                          
                          findall(Z,(actor(I,B,_,_),movie_actor(M,I),movie(M,Z,_,_,_,_,_,_)),L2),
                          
@@ -223,8 +227,11 @@ distinct_movies(A,B,Set):- findall(Z,(actor(I,A,_,_),movie_actor(M,I),movie(M,Z,
                          sort(L3,LL),
                          write(LL).
 
-
+%Rule6
+movie_by_actor_year(X,L):- findall([Z,Y],(actor(I,X,_,_),movie_actor(M,I),movie(M,Z,_,Y,_,_,_,_),member(Y,L)),L3), 
+                 write(L3).
 
 sort_by_id(ID,T):- findall([ID,T],movie(ID,T,_,_,_,_,_,_),Lst),
                    sort(Lst,LLL),
                     write(LLL).
+
