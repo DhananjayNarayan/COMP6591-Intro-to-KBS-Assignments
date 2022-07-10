@@ -231,7 +231,13 @@ distinct_movies_by_either_two_actors(A,B):- findall(Z,(actor(I,A,_,_),movie_acto
 movie_by_actor_year(X,L):- findall([Z,Y],(actor(I,X,_,_),movie_actor(M,I),movie(M,Z,_,Y,_,_,_,_),member(Y,L)),L3), 
                  write(L3).
 
-sort_by_id(ID,T):- findall([ID,T],movie(ID,T,_,_,_,_,_,_),Lst),
-                   sort(Lst,LLL),
-                    write(LLL).
+%Rule7
+sort_by_id(X):- findall([ID,T],movie(ID,T,_,_,_,_,_,_),Lst),
+                sort(Lst,LLL),
+                write(LLL).
+
+%Rule8
+sort_by_title(L):- findall([M,ID],(movie(ID,M,_,_,_,_,_,_)),LL),
+                   sort(LL,SL),
+                   write(SL).
 
