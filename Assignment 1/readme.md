@@ -19,9 +19,11 @@ consult('moviekb.pl').
 -Query 2 : list all movie titles.
 
  (i) For returning movies individually
-      movie(_,X,_,_,_,_,_,_).
+ 
+    movie(_,X,_,_,_,_,_,_).
  (ii) For returning movies as a list
-      findall(M,movie(_,M,_,_,_,_,_,_),L).
+ 
+    findall(M,movie(_,M,_,_,_,_,_,_),L).
       
  -Query 3 : list all movies played by an actor.
  
