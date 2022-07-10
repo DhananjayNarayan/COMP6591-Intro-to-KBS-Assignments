@@ -8,11 +8,13 @@ Madhuvanthi Hemanathan ()
 #Prolog Queries
 
 -Open the prolog editor and to compilte type 
+
 consult('moviekb.pl'). 
 
 -Query 1 : Search for a movie title.
 
-movie(_,'Baahubali',_,_,_,_,_,_).
+
+    movie(_,'Baahubali',_,_,_,_,_,_).
 
 -Query 2 : list all movie titles.
 
@@ -23,19 +25,23 @@ movie(_,'Baahubali',_,_,_,_,_,_).
       
  -Query 3 : list all movies played by an actor.
  
-   list_movies_played_by_actor('Prabhas').
+ 
+    list_movies_played_by_actor('Prabhas').
    
  -Query 4 : list all distinct movies played by two given actors.
  
-   distinct_movies_by_actors('Sivakarthikeyan','Priyanka Arulmohan').
+ 
+    distinct_movies_by_actors('Sivakarthikeyan','Priyanka Arulmohan').
    
  -Query 5 : list all distinct movies played by either of two given actors.
  
-   distinct_movies_by_either_two_actors('Sivakarthikeyan','Prabhas').
+ 
+    distinct_movies_by_either_two_actors('Sivakarthikeyan','Prabhas').
    
  -Query 6 : list all distinct movies played by some actor within a list of years.
  
-   movie_by_actor_year('Prabhas',[2022,2015]). 
+ 
+    movie_by_actor_year('Prabhas',[2022,2015]). 
     
  -Query 7 : list movie ids, and titles sorted by id.
  
