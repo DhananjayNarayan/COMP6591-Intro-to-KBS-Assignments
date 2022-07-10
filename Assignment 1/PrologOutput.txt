@@ -1,0 +1,87 @@
+Prolog Output- 
+
+?- consult('moviekb.pl').                                                       
+compiling /Users/dhananjaynarayan/Documents/KBS/moviekb.pl for byte code...
+/Users/dhananjaynarayan/Documents/KBS/moviekb.pl:239-241: warning: singleton variables [X] for sort_by_id/1
+/Users/dhananjaynarayan/Documents/KBS/moviekb.pl:244-246: warning: singleton variables [L] for sort_by_title/1
+/Users/dhananjaynarayan/Documents/KBS/moviekb.pl compiled, 247 lines read - 44370 bytes written, 12 ms
+
+(6 ms) yes
+| ?- movie(_,'Baahubali',_,_,_,_,_,_).
+
+true ? .
+Action (; for next solution, a for all solutions, RET to stop) ? 
+
+yes
+| ?- movie(_,X,_,_,_,_,_,_).
+
+X = 'The Black Phone' ? ;
+
+X = 'Don' ? ;
+
+X = 'Major' ? ;
+
+X = 'Radhe Shyam' ? ;
+
+X = 'Baahubali' ? ;
+
+X = 'Theri' ? ;
+
+X = 'Black Panther' ? ;
+
+X = 'Evaru' ? ;
+
+X = 'Beast' ? ;
+
+X = 'Darling' ? ;
+
+X = 'Sinister' ? ;
+
+X = 'Vikram Vedha' ? ;
+
+X = 'Rocketry' ? ;
+
+X = 'RRR' ? ;
+
+X = 'Saaho' ? ;
+
+X = 'Doctor' ? ;
+
+X = 'Jalsa' ? ;
+
+X = 'Vada Chennai' ? ;
+
+X = 'Kaithi' ? ;
+
+X = 'Bajrangi Bhaijaan'
+
+(4 ms) yes
+| ?- findall(M,movie(_,M,_,_,_,_,_,_),L).
+
+L = ['The Black Phone','Don','Major','Radhe Shyam','Baahubali','Theri','Black Panther','Evaru','Beast','Darling','Sinister','Vikram Vedha','Rocketry','RRR','Saaho','Doctor','Jalsa','Vada Chennai','Kaithi','Bajrangi Bhaijaan']
+
+(1 ms) yes
+| ?- list_movies_played_by_actor('Prabhas').
+[Radhe Shyam,Baahubali,Darling,Saaho]
+
+yes
+| ?- distinct_movies_by_actors('Sivakarthikeyan','Priyanka Arulmohan').
+Movies in Common=2[Don,Doctor]
+
+yes
+| ?- distinct_movies_by_either_two_actors('Sivakarthikeyan','Prabhas').
+[Baahubali,Darling,Doctor,Don,Radhe Shyam,Saaho]
+
+yes
+| ?- movie_by_actor_year('Prabhas',[2022,2015]). 
+[[Radhe Shyam,2022],[Baahubali,2015]]
+
+yes
+| ?- sort_by_id(X).
+[[tt10545484,Evaru],[tt10709484,Don],[tt11301946,Beast],[tt11374902,Doctor],[tt1191121,Jalsa],[tt1649303,Darling],[tt1825683,Black Panther],[tt1922777,Sinister],[tt2631186,Baahubali],[tt3863552,Bajrangi Bhaijaan],[tt5440700,Theri],[tt5959980,Vada Chennai],[tt6148156,Vikram Vedha],[tt6836936,Saaho],[tt7144666,The Black Phone],[tt8178634,RRR],[tt8960382,Radhe Shyam],[tt9263550,Rocketry],[tt9851854,Major],[tt9900782,Kaithi]]
+
+yes
+| ?- sort_by_title(L).
+[[Baahubali,tt2631186],[Bajrangi Bhaijaan,tt3863552],[Beast,tt11301946],[Black Panther,tt1825683],[Darling,tt1649303],[Doctor,tt11374902],[Don,tt10709484],[Evaru,tt10545484],[Jalsa,tt1191121],[Kaithi,tt9900782],[Major,tt9851854],[RRR,tt8178634],[Radhe Shyam,tt8960382],[Rocketry,tt9263550],[Saaho,tt6836936],[Sinister,tt1922777],[The Black Phone,tt7144666],[Theri,tt5440700],[Vada Chennai,tt5959980],[Vikram Vedha,tt6148156]]
+
+yes
