@@ -53,7 +53,7 @@ Madhuvanthi Hemanathan (40181308)
     select id, title from movie order by title asc;
     
     
-	## Verification Queries
+## Verification Queries
 
 	-Verification 1 : The data-set must include at least 10 titles.
 
