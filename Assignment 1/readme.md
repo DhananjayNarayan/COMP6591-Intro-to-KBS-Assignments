@@ -55,38 +55,66 @@ Madhuvanthi Hemanathan (40181308)
     
 ## Verification Queries
 
-	-Verification 1 : The data-set must include at least 10 titles.
+-Verification 1 : The data-set must include at least 10 titles.
 
-		select IIF(count(DISTINCT title) >= 10, 'minimum of 10 movie titles validated', 'does not have minimum of 10 movie titles') as validation,
-		count(DISTINCT title) as counts_found from movie;
+	select IIF(count(DISTINCT title) >= 10, 'minimum of 10 movie titles validated', 'does not have 	minimum of 10 movie titles') as validation,
+	count(DISTINCT title) as counts_found from movie;
+	
 
-	-Verification 2 : The data-set must include at least two movies with more than one language.
+-Verification 2 : The data-set must include at least two movies with more than one language.
 
-		select iif(count(id) >= 2, 
-		   count(id),
-		   'Data set does not includes at least two movies with more than one language'
+	   select iif(count(id) >= 2, 
+           'true: Data set includes at least two movies with more than one language',
+           'false: Data set does not include at least two movies with more than one language'
+          ) as validation from (
+            select id,title,languages from movie GROUP by id 
+            HAVING (length(languages) - length(REPLACE(languages, ',', '')) + 1) >= 2
+          );
+	  
+	  
+	  
+-Verification 3: At least 3 cast members per movie must be included. (Showing movies which has cast less than 3)
+
+
+	select iif(count(*) > 0, 
+           'false: Data set does not include at least three cast members per movie',
+		'true: Data set includes at least three cast members per movie'
+          ) as validation from (
+            select movie_id from movie_actor group by movie_id having count(*) < 3
+          );
+
+
+
+-Verification 4: There must exist a movie with no director or writer info.
+
+
+	select iif(count(*) >= 1, 
+           'true: There exists a movie with no director or writer info',
+           'false: There are no movies without director or writer info'
+          ) as validation from (
+            select m.* from movie m where m.id not in (select distinct movie_id from movie_director)
+          );
+
+
+
+-Verification 5: Include at least 5 keywords per movie. Make sure some movies share one or two keywords.
+
+		Keyword count violation:
+
+		select iif(count(*) > 0, 
+		   'true: There exists a movie with less than 5 keywords',
+		   'false: There are no movies with less than 5 keywords'
 		  ) as validation from (
-		    select id,title,languages from movie GROUP by id 
-		    HAVING (length(languages) - length(REPLACE(languages, ',', '')) + 1) >= 2
+		    select id, keywords from movie GROUP by id 
+			 HAVING length(keywords) - length(REPLACE(keywords, ',', '')) + 1 < 5 or length(keywords) is NULL
 		  );
-	-Verification 3: At least 3 cast members per movie must be included. (Showing movies which has cast less than 3)
 
-		select movie_id  from movie_actor group by movie_id having count(*) < 3;
-
-	-Verification 4: There must exist a movie with no director or writer info.
-
-		select m.title from movie m where m.id not in (select distinct movie_id from movie_director);
-
-	-Verification 5: Include at least 5 keywords per movie. Make sure some movies share one or two keywords.
 
 		keyword count:
 
 		select id, keywords, length(keywords) - length(REPLACE(keywords, ',', '')) + 1 from movie where keywords != '' and keywords not null;
 
-		Keyword count violation:
-
-		select id, keywords from movie GROUP by id 
-		HAVING length(keywords) - length(REPLACE(keywords, ',', '')) + 1 < 5 or length(keywords) is NULL;
+		
 
 		keyword sharing movies:
 
@@ -100,8 +128,10 @@ Madhuvanthi Hemanathan (40181308)
 		WHERE str!=''
 		)
 		select word, movie_title from split where word != '' group by word, movie_title;
+		
+		
 
-		keyword sharing movies verification:
+		To show how many times the keyword is shared:
 
 		WITH split(word, str, movie_title) AS (
 		select '', keywords||',', title  from movie
@@ -111,28 +141,40 @@ Madhuvanthi Hemanathan (40181308)
 		s.movie_title
 		FROM split s
 		WHERE str!=''
-		)
-		SELECT word, movie_title, count(word) as count FROM split WHERE word!='' 
-		group by word having count(word) >= 2;
+		    )
+		    SELECT word, count(word) as count FROM split WHERE word!='' 
+			group by word having count(word) >= 2;
 
 
 
-	-Verification 6: Make sure at least two genres are available.
+-Verification 6: Make sure at least two genres are available.
+
+		To make sure each movie has atleast two genre:
+
+		select iif(count(id) > 0, 
+		   'True: There are some movies with less than two genre',
+		   'false: There are no movies with less than two genre'
+		  ) as validation from (
+		    select id,title, genre from movie GROUP by id 
+		HAVING length(genre) - length(REPLACE(genre, ',', '')) + 1 < 2 or length(genre) is NULL
+		  );
+
 
 		Movies with two or more genre:
-
+	
 		select id, genre from movie GROUP by id 
 		HAVING length(genre) - length(REPLACE(genre, ',', '')) + 1 >=2;
-
-		Movies without genre:
-
-		select id, genre from movie GROUP by id 
-		HAVING length(genre) - length(REPLACE(genre, ',', '')) + 1 < 2 or length(genre) is NULL;
+		
 
 
-	-Verification 7: Not all movies have images.
+-Verification 7: Not all movies have images.
 
-		select count(*) as noImageMoviesCount from movie where image_urls is null or image_urls == '';
+		select iif(count(*) > 0, 
+		   'true: There are some movies without images',
+		   'false: There are no movies without images'
+		  ) as validation from (
+		    select id from movie where image_urls is null or image_urls == ''
+		  );
 
 ## Prolog Queries
 
