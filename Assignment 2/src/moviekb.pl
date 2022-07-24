@@ -242,6 +242,5 @@ delete_actor(ID):- write('Deleting the Actor'),
 add_movie_actor(MID,AID):- write('Mapping Movie to Actor'),
                            assertz(movie_actor(MID,AID)).
 
-find_movie(X):- findall([A,X], (movie(A,X,_,_,_,_,_)), L),
-		    write(L).
-		
+find_a_movie(X,L):- findall([ID,M],(movie(ID,M,_,_,_,_,_),atom_concat(X,_,M)),L),
+                   write(L).
