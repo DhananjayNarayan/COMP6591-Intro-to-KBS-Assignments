@@ -46,7 +46,7 @@
     add_movie_actor('tt3175038','nm1299011').
     add_movie_actor('tt3175038','nm3601766').
    
- -Query 5 : Query to Delete Information
+ -Query: Query to Delete Information
  
     delete_movie('tt3175038').
     delete_movie('tt11947158'). #Shows False confirming the movie is delted
@@ -56,12 +56,17 @@
     actor('nm1303433',_,_,_).  #Shows False confirming the actor is delted
  
  
-    distinct_movies_by_either_two_actors('Sivakarthikeyan','Prabhas').
+# Prolog Queries to demonstrate Violating the Conditions 
    
- -Query 6 : list all distinct movies played by some actor within a list of years.
+ -Query: Adding a movie with incorrect genre.
+    
+    add_movie('tt111','The Grey Man',adventure,2022,8.2,[spy,assassin,info,murder,cheating],[english]).
+    #This returns false and does not succeed as a genre called adventure is not defined.
  
- 
-    movie_by_actor_year('Prabhas',[2022,2015]). 
+ -Query: Adding a movie with incorrect language.
+    
+    add_movie('tt222','Kurup',romance,2022,7.2,[spy,assassin,info,murder,cheating],[english,malayalam]).
+    #This returns false and does not succeed as a language called malayalam is not defined. 
     
  -Query 7 : list movie ids, and titles sorted by id.
  
