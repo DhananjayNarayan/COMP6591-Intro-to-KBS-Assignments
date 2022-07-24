@@ -21,7 +21,7 @@ public class KbsDemo {
         System.out.println("Welcome to Movie Knowledge Base!!");
         showOptions();
     }
-    
+
     /**
      * To consult the knowledge base file
      */
