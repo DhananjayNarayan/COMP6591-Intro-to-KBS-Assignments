@@ -8,28 +8,52 @@
 
     add_movie('tt3175038','Ek Villain',thriller,2014,6.5,[murder,villain,jealous],[telugu,tamil]).
     add_movie('tt11947158','Ek Villain 2',thriller,2022,7.5,[murder,villain,jealous],[tamil,telugu]).
-    movie(_,'Baahubali',_,_,_,_,_,_).
+    movie(_,'Ek Villain',_,_,_,_,_). #This confirms the existence of the movie in the KB. 
 
--Query 2 : list all movie titles.
-
- (i) For returning movies individually
- 
-    movie(_,X,_,_,_,_,_,_).
- (ii) For returning movies as a list
- 
-    findall(M,movie(_,M,_,_,_,_,_,_),L).
+-Query: Queries to Add Actors
+    
+    add_actor('nm1303433','John Abraham',male,46).
+    add_actor('nm7796669','Disha Patani',female,32).
+    add_actor('nm1819083','Arjun Kapoor',male,41).
+    add_actor('nm3289096','Siddarth Malhotra',male,32).
+    add_actor('nm1299011','Ritesh Deshmukh',male,44).
+    actor(_,'Ritesh Deshmukh',_,_). #This confirms the existence of the new actor added
+    
       
- -Query 3 : list all movies played by an actor.
+ -Query: Queries to Update Movie Details
+    
+    update_movie_title('tt11947158','Ek Villain Returns').
+    update_movie_genre('tt11947158',romance).
+    update_movie_year('tt11947158',2021).
+    update_movie_rating('tt11947158',8.2).
+    update_movie_keywords('tt11947158',[love,murder,villain,envy,compassion]).
+    update_movie_languages('tt11947158',[tamil]).
+    movie('tt11947158',A,B,C,D,E,F).   #We can see the updated details
  
- 
-    list_movies_played_by_actor('Prabhas').
+ -Query: Queries to update Actor Details
+    
+    update_actor_name('nm1303433','Jenny Abraham').
+    update_actor_age('nm1303433',56).
+    update_actor_gender('nm1303433',female).
+    actor('nm1303433',X,Y,Z).  #We can see the updated details of the actor
    
- -Query 4 : list all distinct movies played by two given actors.
- 
- 
-    distinct_movies_by_actors('Sivakarthikeyan','Priyanka Arulmohan').
+ -Query: Queries to Map movies to actors
+    
+    add_movie_actor('tt11947158','nm1303433').
+    add_movie_actor('tt11947158','nm7796669').
+    add_movie_actor('tt11947158','nm1819083').
+    add_movie_actor('tt3175038','nm3289096').
+    add_movie_actor('tt3175038','nm1299011').
+    add_movie_actor('tt3175038','nm3601766').
    
- -Query 5 : list all distinct movies played by either of two given actors.
+ -Query 5 : Query to Delete Information
+ 
+    delete_movie('tt3175038').
+    delete_movie('tt11947158'). #Shows False confirming the movie is delted
+    movie('tt11947158',_,_,_,_,_,_).
+    
+    delete_actor('nm1303433').
+    actor('nm1303433',_,_,_).  #Shows False confirming the actor is delted
  
  
     distinct_movies_by_either_two_actors('Sivakarthikeyan','Prabhas').
