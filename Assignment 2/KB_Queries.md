@@ -2,7 +2,7 @@
 
 -Open the prolog editor and to compile type 
 
-consult('moviekb.pl'). 
+    consult('moviekb.pl'). 
 
 -Query: Adding Movies
 
