@@ -72,6 +72,16 @@
  
     add_movie('tt225','Kurup 2',romance,2022,7.2,[assassin,info,murder,cheating],[english,tamil]).
     #This returns false and does not succeed as the number of keywords is less than 5. 
+    
+ -Query: Trying to add a duplicate movie
+ 
+    add_movie('tt7144666','The Black Phone',thriller,2021,7.3,[phone,murder,call,kidnapper,kids,ghost,survival,kidnap],[english]).
+    #This returns false as addition of duplicate movie is not allowed
+    
+ -Query: Trying to delete a non-existing movie
+ 
+    delete_movie('dj123').
+    #This returns false as a movie with ID 'dj123' does not exist in the KB
    
     
  # Prolog Queries for Categorical Syllogisms
