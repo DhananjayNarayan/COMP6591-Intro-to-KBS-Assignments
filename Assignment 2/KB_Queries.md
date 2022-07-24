@@ -68,13 +68,13 @@
     add_movie('tt222','Kurup',romance,2022,7.2,[spy,assassin,info,murder,cheating],[english,malayalam]).
     #This returns false and does not succeed as a language called malayalam is not defined. 
     
- -Query 7 : list movie ids, and titles sorted by id.
+ -Query: Adding a movie with less than 5 keywords
  
-    sort_by_id(X).
+    add_movie('tt225','Kurup 2',romance,2022,7.2,[assassin,info,murder,cheating],[english,tamil]).
+    #This returns false and does not succeed as the number of keywords is less than 5. 
+   
     
- -Query 8 : list movie ids, and titles sorted by title.
- 
-    sort_by_title(L).
+ # Prolog Queries for Categorical Syllogisms
     
 
 
