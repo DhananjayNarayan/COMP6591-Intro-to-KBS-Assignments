@@ -87,5 +87,12 @@
  # Prolog Queries for Categorical Syllogisms
     
 
+ -Query for A: All S are P (All movie has Actors)
+ (i) Success
+ 
+    catAsuccess(L). #This returns all the movies having actors
 
+(ii) Failure
+ 
+    catAfail(L). #Finding movies without actors. Should return empty list,indicating failure to find so.
 
