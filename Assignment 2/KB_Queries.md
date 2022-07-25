@@ -6,8 +6,8 @@
 
 -Query: Adding Movies
 
-    add_movie('tt3175038','Ek Villain',thriller,2014,6.5,[murder,villain,jealous],[telugu,tamil]).
-    add_movie('tt11947158','Ek Villain 2',thriller,2022,7.5,[murder,villain,jealous],[tamil,telugu]).
+    add_movie('tt3175038','Ek Villain',thriller,2014,6.5,[murder,villain,jealous,hammer,mask],[telugu,tamil]).
+    add_movie('tt11947158','Ek Villain 2',thriller,2022,7.5,[murder,villain,jealous,hammer,mask],[tamil,telugu]).
     movie(_,'Ek Villain',_,_,_,_,_). #This confirms the existence of the movie in the KB. 
 
 -Query: Queries to Add Actors
