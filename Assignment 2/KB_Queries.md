@@ -87,7 +87,7 @@
  # Prolog Queries for Categorical Syllogisms
     
 
- -Query for A: All S are P (All movie has Actors)
+ ## -Query for A: All S are P (All movie has Actors)
  
  (i) Success
  
@@ -97,7 +97,7 @@
  
     catAfail(L). #Finding movies without actors. Should return empty list,indicating failure to find so.
 
--Query for E: No S are P ( No movie has language Malayalam)
+ ## -Query for E: No S are P ( No movie has language Malayalam)
  
  (i) Success
  
@@ -107,7 +107,7 @@
  
      catEfail([english],L1). #To show its failure, we are searching for a movie with a known/valid language - english.
 
--Query for I: Some S are P ( Some movies are Thriller)
+ ## -Query for I: Some S are P ( Some movies are Thriller)
  
  (i) Success
  
@@ -117,7 +117,7 @@
  
      catIfail(L1). #Should return a list of movies with all genres other than thriller
 
--Query for O: Some S are not P (Some movies do not have good rating) 
+ ## -Query for O: Some S are not P (Some movies do not have good rating) 
  
  (i) Success
       
