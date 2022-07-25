@@ -88,6 +88,7 @@
     
 
  -Query for A: All S are P (All movie has Actors)
+ 
  (i) Success
  
     catAsuccess(L). #This returns all the movies having actors
@@ -95,4 +96,36 @@
 (ii) Failure
  
     catAfail(L). #Finding movies without actors. Should return empty list,indicating failure to find so.
+
+-Query for E: No S are P ( No movie has language Malayalam)
+ 
+ (i) Success
+ 
+     catEsuccess([malayalam],L1). #should return an empty list because malayalam is not in the language facts. 
+
+(ii) Failure
+ 
+     catEfail([english],L1). #To show its failure, we are searching for a movie with a known/valid language - english.
+
+-Query for I: Some S are P ( Some movies are Thriller)
+ 
+ (i) Success
+ 
+     catIsuccess(thriller,L1).  #Should return a list with all thriller movies
+
+(ii) Failure
+ 
+     catIfail(L1). #Should return a list of movies with all genres other than thriller
+
+-Query for O: Some S are not P (Some movies do not have good rating) 
+ 
+ (i) Success
+      
+      catOsuccess(L). #should return movies having no good ratings
+   
+
+(ii) Failure
+  
+     catOfail(L).  #should return movies having good ratings
+    
 
