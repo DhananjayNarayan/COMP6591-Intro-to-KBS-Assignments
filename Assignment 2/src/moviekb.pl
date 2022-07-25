@@ -3,26 +3,26 @@
 :- dynamic(actor/4).
 :- dynamic(movie_actor/2).
 
-movie('tt7144666','The Black Phone',thriller,2021,7.3,[phone,murder,call,kidnapper,kids,ghost,survival,kidnap],english).
-movie('tt10709484','Don',drama,2022,7.0,[don,love,rowdy,sivakarthikeyan,ambition,goal,chechi],tamil).
-movie('tt9851854','Major',thriller,2022,8.6,[patriotism,sacrifice,war,martyr,love],telugu).
-movie('tt8960382','Radhe Shyam',romance,2022,5.3,[love,destiny,prediction,future,premonition],telugu).
-movie('tt2631186','Baahubali',drama,2015,8.0,[kings,throne,fight,war,love,revenge,flashback],telugu).
-movie('tt5440700','Theri',thriller,2016,7.3,[daughter,kidnap,love,death,revenge],tamil).
-movie('tt1825683','Black Panther',drama,2018,7.3,[revenge,flashback,throne,king,war],english).
-movie('tt10545484','Evaru',thriller,2019,8.2,[revenge,flashback,murder,spy,trauma,war],telugu).
-movie('tt11301946','Beast',thriller,2022,5.2,[hero,army,dance,hijack,mall],tamil).
-movie('tt1649303','Darling',romance,2010,7.3,[love,funny,dance,cheat,flashback],telugu).
-movie('tt1922777','Sinister',thriller,2012,6.8,[ghost,father,haunted,family,exorcism],english).
-movie('tt6148156','Vikram Vedha',drama,2017,8.2,[revenge,love,gangster,cop,murder,conspiracy],tamil).
-movie('tt9263550','Rocketry',drama,2022,9.3,[truestory,sad,conspiracy,patriotism],tamil).
-movie('tt8178634','RRR',drama,2022,8.0,[patriotism,hero,brothers,dance,love],telugu).
-movie('tt6836936','Saaho',drama,2019,5.0,[cop,thief,burglary,love,cheat],telugu).
-movie('tt11374902','Doctor',thriller,2021,7.5,[kidnap,crime,love,baby,chellama],tamil).
-movie('tt1191121','Jalsa',romance,2008,7.4,[love,impress,dance,musical,breakup],telugu).
-movie('tt5959980','Vada Chennai',drama,2018,8.4,[crime,muder,thief,guns,war,violence],tamil).
-movie('tt9900782','Kaithi',thriller,2019,8.5,[smuggling,drugs,war,biryani,multiverse,police,chase],tamil).
-movie('tt3863552','Bajrangi Bhaijaan',drama,2015,8.1,[chicken,pakistan,india,kid,child,reunion],telugu).
+movie('tt7144666','The Black Phone',thriller,2021,7.3,[phone,murder,call,kidnapper,kids,ghost,survival,kidnap],[english]).
+movie('tt10709484','Don',drama,2022,7.0,[don,love,rowdy,sivakarthikeyan,ambition,goal,chechi],[tamil,telugu]).
+movie('tt9851854','Major',thriller,2022,8.6,[patriotism,sacrifice,war,martyr,love],[telugu,tamil]).
+movie('tt8960382','Radhe Shyam',romance,2022,5.3,[love,destiny,prediction,future,premonition],[telugu]).
+movie('tt2631186','Baahubali',drama,2015,8.0,[kings,throne,fight,war,love,revenge,flashback],[telugu]).
+movie('tt5440700','Theri',thriller,2016,7.3,[daughter,kidnap,love,death,revenge],[tamil]).
+movie('tt1825683','Black Panther',drama,2018,7.3,[revenge,flashback,throne,king,war],[english]).
+movie('tt10545484','Evaru',thriller,2019,8.2,[revenge,flashback,murder,spy,trauma,war],[telugu]).
+movie('tt11301946','Beast',thriller,2022,5.2,[hero,army,dance,hijack,mall],[tamil,telugu]).
+movie('tt1649303','Darling',romance,2010,7.3,[love,funny,dance,cheat,flashback],[telugu]).
+movie('tt1922777','Sinister',thriller,2012,6.8,[ghost,father,haunted,family,exorcism],[english]).
+movie('tt6148156','Vikram Vedha',drama,2017,8.2,[revenge,love,gangster,cop,murder,conspiracy],[tamil]).
+movie('tt9263550','Rocketry',drama,2022,9.3,[truestory,sad,conspiracy,patriotism],[tamil]).
+movie('tt8178634','RRR',drama,2022,8.0,[patriotism,hero,brothers,dance,love],[telugu]).
+movie('tt6836936','Saaho',drama,2019,5.0,[cop,thief,burglary,love,cheat],[telugu]).
+movie('tt11374902','Doctor',thriller,2021,7.5,[kidnap,crime,love,baby,chellama],[tamil]).
+movie('tt1191121','Jalsa',romance,2008,7.4,[love,impress,dance,musical,breakup],[telugu]).
+movie('tt5959980','Vada Chennai',drama,2018,8.4,[crime,muder,thief,guns,war,violence],[tamil]).
+movie('tt9900782','Kaithi',thriller,2019,8.5,[smuggling,drugs,war,biryani,multiverse,police,chase],[tamil]).
+movie('tt3863552','Bajrangi Bhaijaan',drama,2015,8.1,[chicken,pakistan,india,kid,child,reunion],[telugu]).
 
 
 actor('nm1659141','Prabhas',male ,43).
@@ -180,10 +180,19 @@ movie_actor('tt3863552','nm0004626').
 movie_actor('tt3863552','nm7372970').
 
 
+ismember(X, [X|_]).
+ismember(X, [_|T]) :- ismember(X, T).
+
+
+check_language([]). 
+check_language([H|T]):-  language(H),
+                         check_language(T). 
 
 add_movie(ID,N,G,Y,R,KW,LAN):- write('Adding the movie'),
-                           genre(G),
-                           language(LAN),
+                           genre(G),                         
+                           check_language(LAN),
+                           length(KW,NUM),
+                           NUM >= 5,                         
                            \+ movie(ID,_,_,_,_,_,_),
                            assertz(movie(ID,N,G,Y,R,KW,LAN)).
                             
@@ -210,9 +219,11 @@ update_movie_keywords(ID,NEWKW):- write('Updating Movie Keywords'),
                                assertz(movie(ID,N,G,Y,R,NEWKW,LAN)).
 
 update_movie_languages(ID,NEWLANGUAGE):- write('Updating Movie Languages'),
-                                language(NEWLANGUAGE),
+                            
                                retract(movie(ID,N,G,Y,R,KW,_)),
                                assertz(movie(ID,N,G,Y,R,KW,NEWLANGUAGE)).
+
+
 
 
 delete_movie(ID):- write('Deleting the Movie'),
@@ -242,5 +253,40 @@ delete_actor(ID):- write('Deleting the Actor'),
 add_movie_actor(MID,AID):- write('Mapping Movie to Actor'),
                            assertz(movie_actor(MID,AID)).
 
+
 find_a_movie(X,L):- findall([ID,M],(movie(ID,M,_,_,_,_,_),atom_concat(X,_,M)),L),
                    write(L).
+
+
+catAsuccess(L):- write('All S are P : All movie has Actors'),
+          
+          findall([S,A],(movie(ID,S,_,_,_,_,_),movie_actor(ID,P),actor(P,A,_,_)),L).
+          %write(L)
+
+catAfail(L):- write('All S are P : All movie has Actors. '),
+          write('Finding movies without actors. Should return empty list,indicating failure to find so.'),
+          findall([S,A],(movie(ID,S,_,_,_,_,_),movie_actor(ID,''),actor(P,A,_,_)),L).
+
+catEsuccess(L,L1):- write('No S are P : No movie has language Malayalam'),
+         findall([M,L],(movie(_,M,_,_,_,_,L)),L1).
+
+
+catEfail(L,L1):- write('No S are P : No movie has language Malayalam. To show its failure, we are searching for a movie with a known/valid language - english.'),
+         findall([M,L],(movie(_,M,_,_,_,_,L)),L1).
+        
+
+catIsuccess(G,L1):- write('Some S are P : Some movies are Thriller. '),
+                 findall([M,G],(movie(_,M,G,_,_,_,_)),L1).
+
+
+
+catIfail(L1):- write('Some S are P : Some movies are Thriller. To show its fail condition, we are showing movies with genres other than thriller '),
+               findall([M,G],(movie(_,M,G,_,_,_,_), (G \= thriller)),L1).              
+
+catOsuccess(L):- write('Some S are not P' : 'Some movies do not have good rating. '),
+                write('Searching for movies having ratings lesser than 8. '),
+                findall([M,R],(movie(_,M,_,_,R,_,_),R < 8.0),L).
+
+catOfail(L) :- write('Some S are not P' : 'Some movies do not have good rating. '),
+                  write('Searching for movies having ratings greater than 8. '),
+                findall([M,R],(movie(_,M,_,_,R,_,_),R > 8.0),L).
