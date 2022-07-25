@@ -265,7 +265,7 @@ catAsuccess(L):- write('All S are P : All movie has Actors'),
 
 catAfail(L):- write('All S are P : All movie has Actors. '),
           write('Finding movies without actors. Should return empty list,indicating failure to find so.'),
-          findall([S,A],(movie(ID,S,_,_,_,_,_),movie_actor(ID,''),actor(P,A,_,_)),L).
+          findall([S,A],(movie(ID,S,_,_,_,_,_),movie_actor(ID,''),actor(_,A,_,_)),L).
 
 catEsuccess(L,L1):- write('No S are P : No movie has language Malayalam'),
          findall([M,L],(movie(_,M,_,_,_,_,L)),L1).
