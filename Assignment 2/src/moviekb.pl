@@ -215,11 +215,13 @@ update_movie_year(ID,NEWYEAR):- write('Updating Movie Year'),
 
 
 update_movie_keywords(ID,NEWKW):- write('Updating Movie Keywords'),
+                               length(NEWKW,NUM),
+                               NUM >= 5, 
                                retract(movie(ID,N,G,Y,R,_,LAN)),
                                assertz(movie(ID,N,G,Y,R,NEWKW,LAN)).
 
 update_movie_languages(ID,NEWLANGUAGE):- write('Updating Movie Languages'),
-                            
+                               check_language(NEWLANGUAGE),
                                retract(movie(ID,N,G,Y,R,KW,_)),
                                assertz(movie(ID,N,G,Y,R,KW,NEWLANGUAGE)).
 
