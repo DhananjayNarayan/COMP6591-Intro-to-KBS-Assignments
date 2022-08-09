@@ -1,0 +1,55 @@
+"C:\Program Files\Amazon Corretto\jdk11.0.12_7\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.2\lib\idea_rt.jar=50655:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\madhu\MACS_Courses\Summer22\kbs\kbs-assignments\Assignment_3\datalogkbs\out\production\datalogkbs;C:\Program Files\swipl\lib\jpl.jar" Main
+Welcome to datalog kbs demo. Enter 'help' or 'exit' to know more
+Enter the command:
+help
+Below are the functionalities of each command
+
+dl -> Loads datalog file using the path. eg: dl filepath
+pl -> Loads prolog file using the path. eg: pl filepath
+s_rules -> Show loaded rules from pl and dl files
+s_details -> Show the current loaded facts from pl and dl files
+help -> Provides all available commands
+query -> Lets user to query the database using datalog rules
+print -> Prints EDB and IDB values of loaded Datalog file
+exit -> Used to exit the program
+
+Enter the command:
+dl C:\Users\madhu\MACS_Courses\Summer22\kbs\kbs-assignments\Assignment_3\datalogkbs\src\parent.txt
+1 facts found in datalog
+2 rules found in datalog
+Enter the command:
+pl C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/parent.pl
+consult('C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/parent.pl ') Prolog File DataLogLoader Success
+clause loaded into pl: person(john)
+clause loaded into pl: ancestor(X, Y) :- parent(X, Y)
+clause loaded into pl: ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
+Enter the command:
+s_rules
+ancestor(X, Y)
+ancestor(X, Y)
+Enter the command:
+s_details
+Prolog file loaded from: C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/parent.pl 
+Datalog file loaded from: C:\Users\madhu\MACS_Courses\Summer22\kbs\kbs-assignments\Assignment_3\datalogkbs\src\parent.txt 
+Facts loaded are
+person(john)
+parent('John', 'Walter')
+parent('Walter', 'Peter')
+Enter the command:
+print
+Available IDBs: ancestor
+Available EDBs: parent
+Enter the command:
+query parent('John','Walter')
+query executed successfully: parent('John','Walter') 
+Enter the command:
+ancestor('John','Peter')
+Command not found
+Enter the command:
+dl C:\Users\madhu\MACS_Courses\Summer22\kbs\kbs-assignments\Assignment_3\datalogkbs\src\instructor_rules.dl
+3 facts found in datalog
+4 rules found in datalog
+Enter the command:
+pl C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/instructor_facts.dl
+consult('C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/instructor_facts.dl ') Prolog File DataLogLoader Success
+

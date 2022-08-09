@@ -1,0 +1,12 @@
+parent(john,tom).
+parent(jenny,tom).
+parent(walter,john).
+parent(mary,john).
+parent(leo,mary).
+
+male(john).
+male(walter).
+male(leo).
+female(jenny).
+female(mary).
+

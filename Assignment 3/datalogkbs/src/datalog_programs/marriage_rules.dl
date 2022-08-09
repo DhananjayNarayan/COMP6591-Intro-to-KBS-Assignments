@@ -1,0 +1,1 @@
+willmarry(X,Y):- loves(X,Y), loves(Y,X).

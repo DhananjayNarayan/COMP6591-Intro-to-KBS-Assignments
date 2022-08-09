@@ -1,0 +1,8 @@
+
+dl C:\Users\madhu\MACS_Courses\Summer22\kbs\kbs-assignments\Assignment_3\datalogkbs\src\parent.txt
+pl C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/parent.pl
+query ancestor('John','Walter')
+query parent('John','Walter')
+
+dl C:\Users\madhu\MACS_Courses\Summer22\kbs\kbs-assignments\Assignment_3\datalogkbs\src\instructor_rules.dl
+pl C:/Users/madhu/MACS_Courses/Summer22/kbs/kbs-assignments/Assignment_3/datalogkbs/src/instructor_facts.dl 

@@ -1,0 +1,6 @@
+loves(abhishek,aishwarya).
+loves(aishwarya,abhishek).
+loves(salman,aishwarya).
+loves(ranveer,deepika).
+loves(deepika,ranveer).
+

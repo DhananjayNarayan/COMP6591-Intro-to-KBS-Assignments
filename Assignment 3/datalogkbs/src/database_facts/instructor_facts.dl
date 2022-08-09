@@ -1,0 +1,7 @@
+instructor(ali, comp6591).
+instructor(joey, soen6441).
+instructor(aiman, comp6481).
+enroll(dj,comp6591).
+enroll(madhu,soen6441).
+enroll(dj,comp6481).
+enroll(madhu,comp6481).

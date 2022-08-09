@@ -1,0 +1,2 @@
+teaches(P,R):-instructor(P,C),enroll(R,C).
+professors(L):- findall(X, instructor(X,_), L), write(L).
