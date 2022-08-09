@@ -13,6 +13,6 @@
   
  ### -Queries
  
-    query ancestor('John','Walter')
+    query ancestor('John','Peter')
     query parent('John','Walter')
 
